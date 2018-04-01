@@ -1,0 +1,32 @@
+{
+  "name": "timeline-korus",
+  "version": "1.0.0",
+  "description": "testwork for korus",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/disha1010/timeline-korus.git"
+  },
+  "keywords": [
+    "html",
+    "scss",
+    "webpack"
+  ],
+  "author": "disha1010",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/disha1010/timeline-korus/issues"
+  },
+  "homepage": "https://github.com/disha1010/timeline-korus#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "webpack": "3.11"
+  }
+}
