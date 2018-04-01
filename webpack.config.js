@@ -1,13 +1,16 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const extractSass = new ExtractTextPlugin({
-    filename: "./dist/[name].css"
+    filename: "[name].css"
 });
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/styles/index.scss',
   output: {
-    filename: './dist/[name].js'
+    path: __dirname + '/dist',
+    filename: '[name].js'
   },
   module: {
     rules: [{
@@ -24,6 +27,10 @@ module.exports = {
     }]
   },
   plugins: [
-      extractSass
+    extractSass,      
+    new HtmlWebpackPlugin({
+      title: 'Korus test',
+      template: './src/index.html'
+    })
   ]
 };

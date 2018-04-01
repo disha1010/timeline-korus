@@ -12,7 +12,7 @@
 .timeline-section {
 	position: relative;
 	display: table-cell;
-	color: #959595;
+	color: $gray-color;
 }
 .point {
 	content: "";
@@ -24,94 +24,100 @@
 	position: absolute;
 	top: 20px;
 	left: calc(50% - 12px);
-	border-color: #e6e6e6;
+	border-color: $light-gray-color;
 }
-.timeline-section__success,
+.timeline-section__success {
+  color: $green-color;
+  .point {
+    background-color: $green-color;
+    border-color: $green-color;
+  }
+  .line {
+    background-color: $green-color;
+  }
+}
 .timeline-section__progress {
-	color: #00a11f;
-}
-.timeline-section__success .point,
-.timeline-section__progress .point {
-	border-color: #00a11f;
-}
-.timeline-section__success .point {
-	background-color: #00a11f;
+  color: $green-color;
+  .point {
+    border-color: $green-color;
+  }
 }
 .timeline-section__warning {
-	color: #ff9a46;
-}
-.timeline-section__warning .point {
-	border-color: #ff9a46;
+  color: $orange-color;
+  .point {
+    border-color: $orange-color;
+  }
 }
 .timeline-section__danger {
-	color: #ff6866;
-}
-.timeline-section__danger .point {
-	border-color: #ff6866;
-	background-color: #ff6866;
+  color: $red-color;
+  .point {
+    border-color: $red-color;
+    background-color: $red-color;
+  }
 }
 .line {    
 	content: "";
 	width: calc(100% - 24px);
 	height: 4px;
-	background-color: #e6e6e6;
+	background-color: $light-gray-color;
 	position: absolute;
 	top: 28px;
 	left: calc(50% + 10px);
 }
-.timeline-section__success .line {
-	background-color: #00a11f;
+@mixin linear-gradient($start-color, $end-color){
+	background: linear-gradient(to right, $start-color, $end-color);
+	background: -webkit-linear-gradient(to right, $start-color, $end-color); 
+	background: -moz-linear-gradient(to right, $start-color, $end-color);
 }
 .line__green-to-gray {
-	background: linear-gradient(to right, #00a11f, #e6e6e6 50%);
-	background: -webkit-linear-gradient(to right, #00a11f, #e6e6e6 50%); 
-	background: -moz-linear-gradient(to right, #00a11f, #e6e6e6 50%);
+  @include linear-gradient($green-color, $light-gray-color 50%);
 }
 .line__orange-to-gray {
-	background: linear-gradient(to right, #ff9a46, #e6e6e6 50%);
-	background: -webkit-linear-gradient(to right, #ff9a46, #e6e6e6 50%); 
-	background: -moz-linear-gradient(to right, #ff9a46, #e6e6e6 50%);
+  @include linear-gradient($orange-color, $light-gray-color 50%);
 }
 .line__green-to-red {
-	background: linear-gradient(to right, #00a11f, #ff6866);
-	background: -webkit-linear-gradient(to right, #00a11f, #ff6866); 
-	background: -moz-linear-gradient(to right, #00a11f, #ff6866);
+  @include linear-gradient($green-color, $red-color);
 }
 /* big timeline */
 .timelines-wrapper__big {
 	margin-right: 20px;
-	margin-left: 20px;
-}
-.timelines-wrapper__big .point {
-	left: unset;
-	right: 0;
+  margin-left: 20px;
+  .point {
+    left: unset;
+    right: 0;
+  }
+  .line {
+    left: 2px;
+  }
+  .timeline-section__progress {
+    color: $gray-color;
+    .point {
+      background-color: transparent;
+      border-color: $light-gray-color;
+    }
+  }
+  .timeline-section__warning {
+    .point {
+      background-color: transparent;
+      border-color: $light-gray-color;
+    }
+  }
+  .timeline-section__success {
+    .line {
+      background: $green-color;
+    }
+  }
+  .timeline-section__danger {
+    .line {
+      background: $red-color;
+    }
+  }
 }
 .timeline-section__start {
-	width: 22px;
-}
-.timeline-section__start .point {
-	background-color: #00a11f;
-	border-color: #00a11f;
-	top: 19px;
-	left: 0;
-}
-.timelines-wrapper__big .timeline-section__progress .point {
-	background-color: #fff;
-	border-color: #e6e6e6;
-}
-.timelines-wrapper__big .timeline-section__warning .point {
-	background-color: #fff;
-	border-color: #e6e6e6;
-}
-.timelines-wrapper__big .timeline-section__progress {
-	color: #959595;
-}
-.timelines-wrapper__big .line {
-	left: 2px;
-}
-.timelines-wrapper__big .timeline-section__success .line {
-	background: #00a11f;
-}
-.timelines-wrapper__big .timeline-section__danger .line {
-	background-color: #ff6866;
+  width: 22px;
+  .point {
+    background-color: $green-color;
+    border-color: $green-color;
+    top: 19px;
+  }
 }
