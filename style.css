@@ -9,11 +9,13 @@ html, body {
 }
 .timeline {
 	margin-bottom: 50px;
+	width: 100%;
+	display: table;
+	table-layout: fixed;
 } 
 .timeline-section {
 	position: relative;
-	width: 30%;
-	display: inline-block;
+	display: table-cell;
 	color: #959595;
 }
 .point {
@@ -54,7 +56,7 @@ html, body {
 }
 .line {    
 	content: "";
-	width: calc(100% - 20px);
+	width: calc(100% - 24px);
 	height: 4px;
 	background-color: #e6e6e6;
 	position: absolute;
@@ -80,17 +82,22 @@ html, body {
 	background: -moz-linear-gradient(to right, #00a11f, #ff6866);
 }
 /* big timeline */
+.timelines-wrapper__big {
+	margin-right: 20px;
+	margin-left: 20px;
+}
 .timelines-wrapper__big .point {
 	left: unset;
 	right: 0;
 }
 .timeline-section__start {
-	width: 12px;
+	width: 22px;
 }
 .timeline-section__start .point {
 	background-color: #00a11f;
 	border-color: #00a11f;
-	top: 6px
+	top: 19px;
+	left: 0;
 }
 .timelines-wrapper__big .timeline-section__progress .point {
 	background-color: #fff;
@@ -100,8 +107,11 @@ html, body {
 	background-color: #fff;
 	border-color: #e6e6e6;
 }
+.timelines-wrapper__big .timeline-section__progress {
+	color: #959595;
+}
 .timelines-wrapper__big .line {
-	left: -2px;
+	left: 2px;
 }
 .timelines-wrapper__big .timeline-section__success .line {
 	background: #00a11f;
